@@ -18,13 +18,13 @@
 		die("Connection failed: " . $conn->connect_error);
 	} 	
 	
-	$sql = "SELECT id, origen, destino, hora FROM alarmas";
+	$sql = "SELECT id, origen,horaOrigen, destino, horaDestino FROM alarmas";
 	$result = $conn->query($sql);
 
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			echo $row["id"].",". $row["origen"].",". $row["destino"].",". $row["hora"]. "\n";
+			echo $row["id"].",". $row["origen"].",".$row["horaOrigen"]. $row["destino"].",". $row["horaDestino"]. "\n";
 		}
 	} else {
 		echo "0 results";
