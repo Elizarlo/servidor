@@ -24,7 +24,7 @@
 	if ($result->num_rows > 0) {
 		// output data of each row
 		while($row = $result->fetch_assoc()) {
-			echo $row["id"].",". $row["origen"].",".$row["horaOrigen"]. $row["destino"].",". $row["horaDestino"]. "\n";
+			echo $row["id"].",". $row["origen"].",".$row["horaOrigen"].",". $row["destino"].",". $row["horaDestino"]. "\n";
 		}
 	} else {
 		echo "0 results";
