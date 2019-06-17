@@ -4,11 +4,8 @@
 	$dbname   = "husos";
 	$password = "ESTANQUE98ful";
 
-	$origen    = $_POST['origen'];
-  $horaOrigen = $_POST['horaOrigen'];
-	$destino = $_POST['destino'];
-	$horaDestino = $_POST['horaDestino'];
-	
+
+	$id        = $_POST['id'];
 
 	
 
@@ -21,11 +18,10 @@
 	} 	
 	
 
-	$sql = "INSERT INTO alarmas 
-	VALUES (0,'$origen',  '$horaOrigen', '$destino', '$horaDestino')";
+	$sql = "DELETE FROM itinerario WHERE id_iti='$id'";
 
 	if ($conn->query($sql) === TRUE) {
-		echo "Registro Insertado de Manera Exitosa"."\n";
+		echo "Registro Eliminado de Manera Exitosa"."\n";
 	} else {
 		echo "Error: " . $sql . "<br>" . $conn->error;
 	}
